@@ -1,11 +1,9 @@
-/* Asegura que el menú ocupe todo el ancho de la pantalla */
+/* Mantén el estilo de tu menú con pequeñas modificaciones */
 .menuCSS3 {
     width: 100%; /* El menú ocupa todo el ancho de la pantalla */
-    background-color: #F9B53C; /* Color de fondo del menú */
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    background-color: #F9B53C;
 }
 
-/* Estilo de la lista principal */
 .menuCSS3 ul {
     display: flex;
     padding: 0;
@@ -14,78 +12,58 @@
     width: 100%; /* Asegura que la lista ocupe todo el ancho disponible */
 }
 
-/* Estilo de los enlaces */
 .menuCSS3 a {
     display: block;
     padding: 1em 2em; /* Ajuste del padding */
     background-color: #F9B53C;
     text-decoration: none;
     color: #191C26;
-    transition: background-color 0.3s; /* Transición suave para el hover */
+    transition: background-color 0.3s;
     width: 100%; /* Hace que cada enlace ocupe el 100% de su contenedor */
     box-sizing: border-box; /* Asegura que el padding no haga que el enlace sobrepase el ancho */
 }
 
-/* Estilo del hover */
 .menuCSS3 a:hover {
     background-color: #CC673B;
 }
 
-/* Posicionamiento relativo para los items del menú */
 .menuCSS3 ul li {
     position: relative; /* Necesario para el submenú */
-    flex-grow: 1; /* Hace que los elementos de la lista crezcan y ocupen el mismo espacio */
+    flex: 1; /* Hace que cada item ocupe el mismo espacio */
 }
 
-/* Submenú oculto por defecto */
 .menuCSS3 ul li ul {
     display: none;
     position: absolute; /* Posiciona el submenú */
     top: 100%; /* Muestra el submenú debajo del elemento padre */
     left: 0;
-    padding: 0; /* Elimina padding del submenú */
+    padding: 0;
     margin: 0;
     list-style: none;
-    background-color: #F9B53C; /* Color de fondo del submenú */
+    background-color: #F9B53C;
     width: 100%; /* Asegura que el submenú ocupe todo el ancho */
 }
 
-/* Muestra el submenú cuando se pasa el mouse */
 .menuCSS3 ul li:hover ul {
-    display: block;
+    display: block; /* Muestra el submenú al pasar el mouse */
 }
 
-/* Estilos de los elementos dentro del submenú */
 .menuCSS3 ul li ul li a {
     padding: 1em; /* Ajusta el padding para los elementos del submenú */
 }
 
-/* Media query para pantallas pequeñas */
 @media screen and (max-width: 768px) {
-    /* Cambios para pantallas más pequeñas */
+    /* Cambios para pantallas pequeñas */
     .menuCSS3 ul {
         flex-direction: column; /* Coloca los elementos del menú en una columna */
     }
 
-    /* Ajusta los enlaces en pantallas más pequeñas */
     .menuCSS3 a {
         padding: 0.8em 1.5em; /* Ajusta el padding para pantallas más pequeñas */
     }
 
-    /* Estilo del submenú en pantallas pequeñas */
     .menuCSS3 ul li ul {
-        position: static; /* El submenú será mostrado de forma normal */
+        position: static; /* Cambia la posición para que el submenú se muestre en línea */
         width: 100%;
     }
-
-    /* Si quieres que el submenú se despliegue con un clic en lugar de hover, puedes hacer algo como esto */
-    .menuCSS3 ul li a::after {
-        content: ' ▼'; /* Agrega una flecha */
-    }
-
-    .menuCSS3 ul li:hover > ul {
-        display: block; /* Muestra el submenú */
-    }
 }
-
-
