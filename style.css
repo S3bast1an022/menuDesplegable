@@ -1,8 +1,16 @@
+/* Asegura que el menú ocupe todo el ancho de la pantalla */
+.menuCSS3 {
+    width: 100%; /* El menú ocupa todo el ancho de la pantalla */
+    background-color: #F9B53C; /* El color de fondo del menú */
+}
+
 .menuCSS3 ul {
     display: flex;
+    justify-content: flex-start; /* Alinea los elementos al inicio (izquierda) */
     padding: 0;
     margin: 0;
     list-style: none;
+    width: 100%; /* Asegura que la lista ocupe todo el ancho disponible */
 }
 
 .menuCSS3 a {
@@ -12,6 +20,8 @@
     text-decoration: none;
     color: #191C26;
     transition: background-color 0.3s; /* Transición suave para el hover */
+    width: 100%; /* Hace que cada enlace ocupe el 100% de su contenedor */
+    box-sizing: border-box; /* Asegura que el padding no haga que el enlace sobrepase el ancho */
 }
 
 .menuCSS3 a:hover {
@@ -20,6 +30,7 @@
 
 .menuCSS3 ul li {
     position: relative; /* Necesario para el submenú */
+    flex: 1; /* Hace que cada elemento ocupe el mismo ancho */
 }
 
 .menuCSS3 ul li ul {
@@ -31,6 +42,7 @@
     margin: 0;
     list-style: none;
     background-color: #F9B53C; /* Color de fondo del submenú */
+    width: 100%; /* Asegura que el submenú ocupe todo el ancho del elemento padre */
 }
 
 .menuCSS3 ul li:hover ul {
@@ -39,4 +51,20 @@
 
 .menuCSS3 ul li ul li a {
     padding: 1em; /* Ajusta el padding para los elementos del submenú */
+}
+
+@media screen and (max-width: 768px) {
+    /* Cambios para pantallas pequeñas */
+    .menuCSS3 ul {
+        flex-direction: column; /* Coloca los elementos del menú en una columna */
+    }
+
+    .menuCSS3 a {
+        padding: 0.8em 1.5em; /* Ajusta el padding para pantallas más pequeñas */
+    }
+
+    .menuCSS3 ul li ul {
+        position: static; /* Cambia la posición para que el submenú se muestre en línea */
+        width: 100%;
+    }
 }
