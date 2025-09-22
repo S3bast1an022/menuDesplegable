@@ -1,6 +1,6 @@
 /* Asegura que el menú ocupe todo el ancho de la pantalla */
 .menuCSS3 {
-    width: 100%; /* El menú ocupa todo el ancho de la pantalla */
+    width: 10%; /* El menú ocupa todo el ancho de la pantalla */
     background-color: #F9B53C; /* El color de fondo del menú */
 }
 
@@ -68,3 +68,4 @@
         width: 100%;
     }
 }
+
